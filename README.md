@@ -18,3 +18,7 @@ $ mkdir /tmp/missing
 ```
 $ man touch
 ```
+4.
+```
+$ touch /tmp/missing/semester
+```
