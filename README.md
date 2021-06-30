@@ -5,3 +5,8 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 1. [Course overview + the shell](#course-overview--the-shell)
 
 ## Course overview + the shell
+1.
+```
+$ echo $SHELL
+/bin/bash
+```
