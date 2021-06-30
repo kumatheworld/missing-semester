@@ -27,3 +27,10 @@ $ touch /tmp/missing/semester
 $ echo '#!/bin/sh' > /tmp/missing/semester
 $ echo 'curl --head --silent https://missing.csail.mit.edu' >> /tmp/missing/semester
 ```
+6.
+```
+$ /tmp/missing/semester
+-bash: /tmp/missing/semester: Permission denied
+$ ls -l /tmp/missing/semester
+-rw-r--r--  1 kumatheworld  wheel  61 Jun 30 19:20 /tmp/missing/semester
+```
