@@ -14,3 +14,7 @@ $ echo $SHELL
 ```
 $ mkdir /tmp/missing
 ```
+3.
+```
+$ man touch
+```
