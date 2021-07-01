@@ -69,3 +69,7 @@ $ chmod u+x /tmp/missing/semester
 $ /tmp/missing/semester
 (command output shown)
 ```
+10.
+```
+$ /tmp/missing/semester | grep "last-modified" > ~/last-modified.txt
+```
