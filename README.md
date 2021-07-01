@@ -59,3 +59,7 @@ vary: Accept-Encoding
 x-fastly-request-id: af16a01b69ff7c7a566e819ede35ff74bfc59970
 content-length: 7985
 ```
+8.
+```
+$ man chmod
+```
