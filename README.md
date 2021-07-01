@@ -63,3 +63,9 @@ content-length: 7985
 ```
 $ man chmod
 ```
+9. The first line of `/tmp/missing/semester` right after the shebang `#!` tells the shell what program to run. In our case, that is `/bin/sh`.
+```
+$ chmod u+x /tmp/missing/semester
+$ /tmp/missing/semester
+(command output shown)
+```
