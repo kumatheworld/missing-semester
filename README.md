@@ -73,3 +73,8 @@ $ /tmp/missing/semester
 $ /tmp/missing/semester | grep "last-modified" > ~/last-modified.txt
 ```
 </details>
+
+<details>
+<summary>Shell Tools and Scripting</summary>
+
+</details>
