@@ -77,4 +77,8 @@ $ /tmp/missing/semester | grep "last-modified" > ~/last-modified.txt
 <details>
 <summary>Shell Tools and Scripting</summary>
 
+1. The following command lists the files under `$dir` in that way.
+```
+$ ls -alhtG $dir
+```
 </details>
