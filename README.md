@@ -81,4 +81,14 @@ $ /tmp/missing/semester | grep "last-modified" > ~/last-modified.txt
 ```
 $ ls -alhtG $dir
 ```
+2.
+```
+marco() {
+   export MARCO=$(pwd)
+}
+
+polo() {
+   cd $MARCO
+}
+```
 </details>
