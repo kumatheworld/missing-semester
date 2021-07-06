@@ -91,4 +91,18 @@ polo() {
    cd $MARCO
 }
 ```
+3. Assuming the given script is named `magic.sh`, the following script is what we want.
+```
+#!/usr/bin/env bash
+
+file=output.txt
+> $file
+while [ $? -eq 0 ]; do
+    ./magic.sh >> $file 2>&1
+done
+
+cat $file
+n=$(expr $(wc -l < $file | sed 's/ //g') - 1)
+echo "It took $n runs to fail"
+```
 </details>
