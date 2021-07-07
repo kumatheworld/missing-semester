@@ -102,7 +102,7 @@ while [ $? -eq 0 ]; do
 done
 
 cat $file
-n=$(expr $(wc -l < $file | sed 's/ //g') - 1)
+n=$(wc -l < $file | sed 's/ //g' | xargs -I{} expr {} - 1)
 echo "It took $n runs to fail"
 ```
 </details>
