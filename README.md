@@ -105,4 +105,8 @@ cat $file
 n=$(wc -l < $file | sed 's/ //g' | xargs -I{} expr {} - 1)
 echo "It took $n runs to fail"
 ```
+4. On MacOS, the following command creates `htmls.zip` that has all `.html` files under `$dir` or its subdirectories.
+```
+$ find "$dir" -name "*.html" -print0 | xargs -0 zip htmls.zip
+```
 </details>
