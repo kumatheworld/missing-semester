@@ -79,7 +79,7 @@ $ /tmp/missing/semester | grep "last-modified" > ~/last-modified.txt
 
 1. The following command lists the files under `$dir` in that way.
 ```
-$ ls -alhtG $dir
+$ ls -alhtG "$dir"
 ```
 2.
 ```
@@ -88,7 +88,7 @@ marco() {
 }
 
 polo() {
-   cd $MARCO
+   cd "$MARCO"
 }
 ```
 3. Assuming the given script is named `magic.sh`, the following script is what we want.
