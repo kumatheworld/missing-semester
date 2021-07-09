@@ -109,4 +109,8 @@ echo "It took $n runs to fail"
 ```
 $ find "$dir" -name "*.html" -print0 | xargs -0 zip htmls.zip
 ```
+5. On MacOS, the following command lists all files under `$dir` or its subdirectories by recency. To get the most recently changed file only, pipe it to `head -n1`.
+```
+$ find "$dir" -type f -print0 | xargs -0 ls -lt
+```
 </details>
