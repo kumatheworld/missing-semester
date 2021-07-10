@@ -114,3 +114,8 @@ $ find "$dir" -name "*.html" -print0 | xargs -0 zip htmls.zip
 $ find "$dir" -type f -print0 | xargs -0 ls -lt
 ```
 </details>
+
+<details>
+<summary>Editors (Vim)</summary>
+
+</details>
