@@ -123,4 +123,5 @@ $ find "$dir" -type f -print0 | xargs -0 ls -lt
 3. Done.
 4. Done.
 5. Ok I will try.
+6. Skipped for now.
 </details>
