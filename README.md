@@ -125,4 +125,5 @@ $ find "$dir" -type f -print0 | xargs -0 ls -lt
 5. Ok I will try.
 6. Skipped for now.
 7. Skipped for now.
+8. I followed the [macros](https://missing.csail.mit.edu/2020/editors/#macros) section and got [example-data.json](example-data.json). Note that you have to undo the changes made by the intermediate macros `e` and `p`.
 </details>
