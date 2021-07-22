@@ -140,4 +140,12 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 
    By further piping the output to `sort | tail -1` we get the most common suffix `al`, which appears 1,039 times. We can use `wc -l` instead to get the number of suffixes, which is 156. Looking at the output of the command above, which is sorted alphabetically, we can easily find a suffix that does not show up. For example, `ab` as in `tab` is not listed there.
 3. Running `sed s/REGEX/SUBSTITUTION/ input.txt > input.txt` will clear `input.txt` as the shell first tries to create a new file `input.txt` to get ready for the redirection. We can run `sed -i s/REGEX/SUBSTITUTION/ input.txt` to get around this.
+4. I skip this as it turned out there was little information from the log.
+   ```
+   $ log show | grep -e"=== system boot:" -e"Previous shutdown cause" | cut -d' ' -f-2
+   2021-07-06 20:25:13.000000+0900
+   2021-07-21 19:06:06.000000+0900
+   2021-07-21 19:06:06.736536+0900
+   ```
+
 </details>
