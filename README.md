@@ -147,5 +147,11 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    2021-07-21 19:06:06.000000+0900
    2021-07-21 19:06:06.736536+0900
    ```
+5. The following command almost does the job.
+   ```
+   $ log show --process 0 | cut -c89- | sort | uniq -c | awk '$1 == 1' | tr -s ' ' | cut -c4-
+   ```
+   Note that we do not filter out old information from earlier than the past 3 reboots since we do not have it in the first place.
 
+   This command has some more problems that I am not sure how to fix. Firstly, it might possibly filter out messages that show up multiple times in a reboot and do not in other reboots. Another serious problem is that the command output is too long to see in practice, being well over 100k lines. This is because it contains many lines that are basically the same but slightly different in number.
 </details>
