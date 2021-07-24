@@ -154,4 +154,11 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    Note that we do not filter out old information from earlier than the past 3 reboots since we do not have it in the first place.
 
    This command has some more problems that I am not sure how to fix. Firstly, it might possibly filter out messages that show up multiple times in a reboot and do not in other reboots. Another serious problem is that the command output is too long to see in practice, being well over 100k lines. This is because it contains many lines that are basically the same but slightly different in number.
+6. The following command downloads the table from the [first website](https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/topic-pages/tables/table-1) and shows the statistics of the population column.
+   ```
+   $ curl -s https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-1 | tr '\n' '\a' | grep -o '<table.*</table>' | tr '\a' '\n' | grep -A1 'headers="cell31 ' | grep "</td>" | sed 's/[^0-9]//g' | R --slave -e 'x <- scan(file="stdin", quiet=TRUE); summary(x)'
+   Min.   1st Qu.    Median      Mean   3rd Qu.      Max.
+   267783607 287309833 300509820 298634769 312159283 323127513
+   ```
+   To get the statistics of the n-th column in general, change `'headers="cell31 '` to `'headers="cell3{n} '` (removing the curly braces).
 </details>
