@@ -162,3 +162,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    ```
    To get the statistics of the n-th column in general, change `'headers="cell31 '` to `'headers="cell3{n} '` (removing the curly braces).
 </details>
+
+<details>
+<summary>Command-line Environment</summary>
+</details>
