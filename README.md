@@ -165,4 +165,18 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 
 <details>
 <summary>Command-line Environment</summary>
+
+#### Job control
+1.
+   ```
+   $ sleep 10000
+   ^Z
+   [1]+  Stopped                 sleep 10000
+   $ bg
+   [1]+ sleep 10000 &
+   $ pgrep -af "sleep 10000"
+   12443
+   $ pkill -af "sleep 10000"
+   [1]+  Terminated: 15          sleep 10000
+   ```
 </details>
