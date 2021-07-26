@@ -179,4 +179,30 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    $ pkill -af "sleep 10000"
    [1]+  Terminated: 15          sleep 10000
    ```
+2. Using `wait`:
+   ```
+   $ sleep 60 &
+   [1] 12651
+   $ wait %1; ls
+   [1]+  Done                    sleep 60
+   README.md         example-data.json
+   ```
+   Defining `pidwait`:
+   ```
+   pidwait() {
+      :
+      while [ $? -eq 0 ]; do
+         sleep 1
+         kill -0 $1 2>/dev/null
+      done
+      ls
+   }
+   ```
+   ```
+   $ sleep 10 &
+   [1] 15304
+   $ pidwait $(pgrep -af "sleep 10")
+   [1]+  Done                    sleep 10
+   README.md         example-data.json
+   ```
 </details>
