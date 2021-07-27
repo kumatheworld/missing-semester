@@ -205,4 +205,6 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    [1]+  Done                    sleep 10
    README.md         example-data.json
    ```
+#### Terminal multiplexer
+1. Done
 </details>
