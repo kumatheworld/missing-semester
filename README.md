@@ -4,30 +4,24 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 <details>
 <summary>Course overview + the shell</summary>
 
-1.
-   ```
+1. ```
    $ echo $SHELL
    /bin/bash
    ```
-2.
-   ```
+2. ```
    $ mkdir /tmp/missing
    ```
-3.
-   ```
+3. ```
    $ man touch
    ```
-4.
-   ```
+4. ```
    $ touch /tmp/missing/semester
    ```
-5.
-   ```
+5. ```
    $ echo '#!/bin/sh' > /tmp/missing/semester
    $ echo 'curl --head --silent https://missing.csail.mit.edu' >> /tmp/missing/semester
    ```
-6.
-   ```
+6. ```
    $ /tmp/missing/semester
    -bash: /tmp/missing/semester: Permission denied
    $ ls -l /tmp/missing/semester
@@ -58,8 +52,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    x-fastly-request-id: af16a01b69ff7c7a566e819ede35ff74bfc59970
    content-length: 7985
    ```
-8.
-   ```
+8. ```
    $ man chmod
    ```
 9. The first line of `/tmp/missing/semester` right after the shebang `#!` tells the shell what program to run. In our case, that is `/bin/sh`.
@@ -68,8 +61,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    $ /tmp/missing/semester
    (command output shown)
    ```
-0.
-   ```
+0. ```
    $ /tmp/missing/semester | grep "last-modified" > ~/last-modified.txt
    ```
 </details>
@@ -81,8 +73,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    ```
    $ ls -alhtG "$dir"
    ```
-2.
-   ```
+2. ```
    marco() {
       export MARCO=$(pwd)
    }
@@ -167,8 +158,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 <summary>Command-line Environment</summary>
 
 #### Job control
-1.
-   ```
+1. ```
    $ sleep 10000
    ^Z
    [1]+  Stopped                 sleep 10000
