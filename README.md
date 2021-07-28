@@ -201,4 +201,17 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 1. ```
    alias dc=cd
    ```
+2. Below is the command output. As you can see, nothing is really worth setting an alias for. Doing something like `alias gc="git commit"` might help but I am willing to type the full commands for those.
+   ```
+   $ history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10
+   1 07/27/21 22:00:42 tmjux
+   1 07/27/21 22:00:43 tmux
+   1 07/27/21 22:00:50 screen
+   1 07/27/21 22:03:30 tmux
+   1 07/27/21 22:06:41 tmux ls
+   1 07/27/21 22:37:09 nano diary.md
+   1 07/27/21 22:38:53 git commit -am "Add 2021-07-27"
+   1 07/27/21 22:38:55 git push
+   1 07/28/21 08:03:35 brew install --cask virtualbox
+   1 07/28/21 19:43:04 history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10   ```
 </details>
