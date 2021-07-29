@@ -196,7 +196,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    README.md         example-data.json
    ```
 #### Terminal multiplexer
-1. Done
+1. Done.
 #### Aliases
 1. ```
    alias dc=cd
