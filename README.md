@@ -214,4 +214,6 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    1 07/27/21 22:38:55 git push
    1 07/28/21 08:03:35 brew install --cask virtualbox
    1 07/28/21 19:43:04 history | awk '{$1="";print substr($0,2)}' | sort | uniq -c | sort -n | tail -n 10   ```
+#### Dotfiles
+1. Done.
 </details>
