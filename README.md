@@ -219,4 +219,5 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 2. Done.
 3. Done.
 4. Done.
+5. Skipped for now. I will add things like `.bashrc` later.
 </details>
