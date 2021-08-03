@@ -220,4 +220,5 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 3. Done.
 4. Done.
 5. Skipped for now. I will add things like `.bashrc` later.
+6. See https://github.com/kumatheworld/dotfiles.
 </details>
