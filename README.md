@@ -223,4 +223,5 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 6. See https://github.com/kumatheworld/dotfiles.
 #### Remote Machines
 1. Done.
+2. Done.
 </details>
