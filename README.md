@@ -235,4 +235,31 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    PermitRootLogin no
    PasswordAuthentication no
    ```
+5. Below are the commands I hit to make sure that mosh can properly recover from a disconnection of the network adapter of the server.
+
+   VM:
+   ``` sh
+   $ mosh-server
+   MOSH CONNECT 60003 q1L6MiTKHPtwZtFY4WnT7A
+
+   mosh-server (mosh 1.3.2) [build mosh 1.3.2]
+   Copyright 2012 Keith Winstein <mosh-devel@mit.edu>
+   License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
+   This is free software: you are free to change and redistribute it.
+   There is NO WARRANTY, to the extent permitted by law.
+
+   [mosh-server detached, pid = 14085]
+   $ sudo ip link set enp0s3 down
+   $ sudo ip link set enp0s3 up
+   ```
+   Local (ssh):
+   ```sh
+   $ ssh vm
+   $ client_loop: send disconnect: Broken pipe
+   ```
+   Local (mosh):
+   ```sh
+   $ mosh vm
+   ```
+   The ssh/mosh connections were made after executing `mosh-server` on the VM. After `sudo ip link set enp0s3 down`, I waited for about a minute to see the `client_loop: send disconnect: Broken pipe` message from the ssh connection. The ssh connection was lost but the mosh connection was kept throughout the experiment.
 </details>
