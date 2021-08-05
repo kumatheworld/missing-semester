@@ -262,4 +262,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    $ mosh vm
    ```
    The ssh/mosh connections were made after executing `mosh-server` on the VM. After `sudo ip link set enp0s3 down`, I waited for about a minute to see the `client_loop: send disconnect: Broken pipe` message from the ssh connection. The ssh connection was lost but the mosh connection was kept throughout the experiment.
+6. ``` sh
+   ssh -fN vm
+   ```
 </details>
