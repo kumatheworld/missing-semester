@@ -269,4 +269,6 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 
 <details>
 <summary>Version Control (Git)</summary>
+
+1. Yes, I have some experience with Git.
 </details>
