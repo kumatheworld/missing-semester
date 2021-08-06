@@ -302,4 +302,9 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    * e6ab30e Use Vimium description from the GitHub repo
    ...
    ```
+   2.
+   ```sh
+   $ git log --pretty=format:%an -n1 README.md
+   Anish Athalye
+   ```
 </details>
