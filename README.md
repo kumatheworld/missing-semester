@@ -266,3 +266,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    ssh -fN vm
    ```
 </details>
+
+<details>
+<summary>Version Control (Git)</summary>
+</details>
