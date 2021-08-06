@@ -307,4 +307,12 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    $ git log --pretty=format:%an -n1 README.md
    Anish Athalye
    ```
+   3.
+   ```sh
+   $ git blame _config.yml | grep collections:
+   a88b4eac (Anish Athalye 2020-01-17 15:26:30 -0500 18) collections:
+   $ git log --format=%B -n1 a88b4eac
+   Redo lectures as a collection
+
+   ```
 </details>
