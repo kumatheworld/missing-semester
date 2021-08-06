@@ -281,4 +281,25 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    Receiving objects: 100% (2020/2020), 15.60 MiB | 5.97 MiB/s, done.
    Resolving deltas: 100% (1185/1185), done.
    ```
+   1.
+   ```sh
+   $ git log --oneline --graph
+   *   602282f (HEAD -> master, origin/master, origin/HEAD) Merge branch 'LemurP/master'
+   |\
+   | * 154aa87 Add link to Git alias section in exercise
+   |/
+   * 4dfc254 Bump dependencies
+   * 8010724 Separate build and links status
+   *   9c84071 Merge branch 'nullmight/fix-key-type'
+   |\
+   | * b63aa80 Fix key type in tutorial
+   |/
+   *   7623daf Merge branch 'FabienRoger/add-plural'
+   |\
+   | * c741a74 Add plural to parent variable
+   |/
+   * 7ec9677 Update broken links
+   * e6ab30e Use Vimium description from the GitHub repo
+   ...
+   ```
 </details>
