@@ -271,4 +271,14 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 <summary>Version Control (Git)</summary>
 
 1. Yes, I have some experience with Git.
+2. ```sh
+   $ git clone https://github.com/missing-semester/missing-semester.git
+   Cloning into 'missing-semester'...
+   remote: Enumerating objects: 2020, done.
+   remote: Counting objects: 100% (122/122), done.
+   remote: Compressing objects: 100% (71/71), done.
+   remote: Total 2020 (delta 59), reused 91 (delta 44), pack-reused 1898
+   Receiving objects: 100% (2020/2020), 15.60 MiB | 5.97 MiB/s, done.
+   Resolving deltas: 100% (1185/1185), done.
+   ```
 </details>
