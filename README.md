@@ -315,4 +315,122 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    Redo lectures as a collection
 
    ```
+3. Working in this very repository, I tried adding `id_rsa` from `~/.ssh/`, commiting and removing it and ran the BFG Repo-Cleaner.
+   ```sh
+   $ cp ~/.ssh/id_rsa .
+   $ git add id_rsa
+   $ git commit -m "Add id_rsa"
+   [main 6a8d643] Add id_rsa
+    1 file changed, 30 insertions(+)
+    create mode 100644 id_rsa
+   $ bfg --delete-files id_rsa
+
+   Using repo : /Users/kumatheworld/Documents/GitHub/missing-semester/.git
+
+   Found 4 objects to protect
+   Found 4 commit-pointing refs : HEAD, refs/heads/main, refs/remotes/origin/HEAD, refs/remotes/origin/main
+
+   Protected commits
+   -----------------
+
+   These are your protected commits, and so their contents will NOT be altered:
+
+   * commit 6a8d6434 (protected by 'HEAD') - contains 1 dirty file :
+         - id_rsa (1.7 KB)
+
+   WARNING: The dirty content above may be removed from other commits, but as
+   the *protected* commits still use it, it will STILL exist in your repository.
+
+   Details of protected dirty content have been recorded here :
+
+   /Users/kumatheworld/Documents/GitHub/missing-semester.bfg-report/2021-08-07/17-43-22/protected-dirt/
+
+   If you *really* want this content gone, make a manual commit that removes it,
+   and then run the BFG on a fresh copy of your repo.
+
+
+   Cleaning
+   --------
+
+   Found 71 commits
+   Cleaning commits:       100% (71/71)
+   Cleaning commits completed in 200 ms.
+
+   BFG aborting: No refs to update - no dirty commits found??
+
+   $ git rm id_rsa
+   rm 'id_rsa'
+   $ git commit -m "Remove id_rsa"
+   [main edb26e2] Remove id_rsa
+    1 file changed, 30 deletions(-)
+    delete mode 100644 id_rsa
+   $ bfg --delete-files id_rsa
+
+   Using repo : /Users/kumatheworld/Documents/GitHub/missing-semester/.git
+
+   Found 3 objects to protect
+   Found 4 commit-pointing refs : HEAD, refs/heads/main, refs/remotes/origin/HEAD, refs/remotes/origin/main
+
+   Protected commits
+   -----------------
+
+   These are your protected commits, and so their contents will NOT be altered:
+
+   * commit edb26e25 (protected by 'HEAD')
+
+   Cleaning
+   --------
+
+   Found 72 commits
+   Cleaning commits:       100% (72/72)
+   Cleaning commits completed in 181 ms.
+
+   Updating 1 Ref
+   --------------
+
+         Ref               Before     After
+         -------------------------------------
+         refs/heads/main | edb26e25 | 41fdadda
+
+   Updating references:    100% (1/1)
+   ...Ref update completed in 51 ms.
+
+   Commit Tree-Dirt History
+   ------------------------
+
+         Earliest                                              Latest
+         |                                                          |
+         ..........................................................Dm
+
+         D = dirty commits (file tree fixed)
+         m = modified commits (commit message or parents changed)
+         . = clean commits (no changes to file tree)
+
+                                 Before     After
+         -------------------------------------------
+         First modified commit | 6a8d6434 | 1829b96f
+         Last dirty commit     | 6a8d6434 | 1829b96f
+
+   Deleted files
+   -------------
+
+         Filename   Git id
+         ----------------------------
+         id_rsa   | df139b64 (1.7 KB)
+
+
+   In total, 3 object ids were changed. Full details are logged here:
+
+         /Users/kumatheworld/Documents/GitHub/missing-semester.bfg-report/2021-08-07/17-54-49
+
+   BFG run is complete! When ready, run: git reflog expire --expire=now --all && git gc --prune=now --aggressive
+   $ git reflog expire --expire=now --all && git gc --prune=now --aggressive
+   Enumerating objects: 212, done.
+   Counting objects: 100% (212/212), done.
+   Delta compression using up to 4 threads
+   Compressing objects: 100% (182/182), done.
+   Writing objects: 100% (212/212), done.
+   Total 212 (delta 70), reused 2 (delta 0), pack-reused 0
+   ```
+   However, when the dirty files shows up only in the latest commit like in this example, you might rather want to do `git commit --amend` to delete the files before even they become part of the history.
 </details>
