@@ -433,4 +433,25 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    Total 212 (delta 70), reused 2 (delta 0), pack-reused 0
    ```
    However, when the dirty files shows up only in the latest commit like in this example, you might rather want to do `git commit --amend` to delete the files before even they become part of the history.
+4. Working in this repository again, we have the following.
+   ```sh
+   $ echo aaa >> README.md
+   $ git stash
+   Saved working directory and index state WIP on main: ac21a61 6.3 done
+   $ git log --all --oneline -n3
+   1f3ac11 (refs/stash) WIP on main: ac21a61 6.3 done
+   e7d9dba index on main: ac21a61 6.3 done
+   ac21a61 (HEAD -> main, origin/main, origin/HEAD) 6.3 done
+   $ git stash pop
+   On branch main
+   Your branch is up to date with 'origin/main'.
+
+   Changes not staged for commit:
+   (use "git add <file>..." to update what will be committed)
+   (use "git restore <file>..." to discard changes in working directory)
+         modified:   README.md
+
+   no changes added to commit (use "git add" and/or "git commit -a")
+   Dropped refs/stash@{0} (1f3ac112937b30ce4615fa12fdfeb4b3e2e8cda2)
+   ```
 </details>
