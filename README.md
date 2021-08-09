@@ -457,4 +457,8 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 5. ```sh
    $ git config --global alias.graph "log --all --graph --decorate --oneline"
    ```
+6. ```sh
+   $ git config --global core.excludesfile ~/.gitignore_global
+   $ echo .DS_Store > ~/.gitignore_global
+   ```
 </details>
