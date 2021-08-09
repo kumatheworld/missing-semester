@@ -454,4 +454,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    no changes added to commit (use "git add" and/or "git commit -a")
    Dropped refs/stash@{0} (1f3ac112937b30ce4615fa12fdfeb4b3e2e8cda2)
    ```
+5. ```sh
+   $ git config --global alias.graph "log --all --graph --decorate --oneline"
+   ```
 </details>
