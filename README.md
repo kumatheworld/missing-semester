@@ -461,4 +461,5 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    $ git config --global core.excludesfile ~/.gitignore_global
    $ echo .DS_Store > ~/.gitignore_global
    ```
+7. See https://github.com/missing-semester/missing-semester/pull/161.
 </details>
