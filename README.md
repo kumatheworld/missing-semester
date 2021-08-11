@@ -224,18 +224,14 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 #### Remote Machines
 1. Done.
 2. Done.
-
-<br>
-
-1. Done.
-2. Done.
 3. Done.
-4. I replaced the existing lines with the following.
+4. Done.
+5. I replaced the existing lines with the following.
    ``` sh
    PermitRootLogin no
    PasswordAuthentication no
    ```
-5. Below are the commands I hit to make sure that mosh can properly recover from a disconnection of the network adapter of the server.
+6. Below are the commands I hit to make sure that mosh can properly recover from a disconnection of the network adapter of the server.
 
    VM:
    ``` sh
@@ -262,7 +258,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    $ mosh vm
    ```
    The ssh/mosh connections were made after executing `mosh-server` on the VM. After `sudo ip link set enp0s3 down`, I waited for about a minute to see the `client_loop: send disconnect: Broken pipe` message from the ssh connection. The ssh connection was lost but the mosh connection was kept throughout the experiment.
-6. ``` sh
+7. ``` sh
    ssh -fN vm
    ```
 </details>
