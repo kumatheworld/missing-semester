@@ -479,5 +479,5 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
       2021-08-11 22:24:49.174780+0900 0x3f78f8   Default     0x0                  90999  0    sudo: (libsystem_info.dylib) Too many groups requested (24).  Can cause performance issues when network directories are involved
       2021-08-11 22:24:49.175425+0900 0x3f78f8   Activity    0x3a7832             90999  0    sudo: (libsystem_info.dylib) Retrieve User by Name
    ```
-
+2. Done.
 </details>
