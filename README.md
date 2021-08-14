@@ -480,4 +480,45 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
       2021-08-11 22:24:49.175425+0900 0x3f78f8   Activity    0x3a7832             90999  0    sudo: (libsystem_info.dylib) Retrieve User by Name
    ```
 2. Done.
+3. We call the given script `hq.sh`.
+
+   `shellcheck` on `hq.sh`:
+   ```sh
+   $ shellcheck hq.sh
+
+   In tmp.sh line 3:
+   for f in $(ls *.m3u)
+            ^---------^ SC2045: Iterating over ls output is fragile. Use globs.
+               ^-- SC2035: Use ./*glob* or -- *glob* so names with dashes won't become options.
+
+
+   In tmp.sh line 5:
+   grep -qi hq.*mp3 $f \
+            ^-----^ SC2062: Quote the grep pattern so the shell won't interpret it.
+                     ^-- SC2086: Double quote to prevent globbing and word splitting.
+
+   Did you mean:
+   grep -qi hq.*mp3 "$f" \
+
+
+   In tmp.sh line 6:
+      && echo -e 'Playlist $f contains a HQ file in mp3 format'
+               ^-- SC3037: In POSIX sh, echo flags are undefined.
+                  ^-- SC2016: Expressions don't expand in single quotes, use double quotes for that.
+
+   For more information:
+   https://www.shellcheck.net/wiki/SC2045 -- Iterating over ls output is fragi...
+   https://www.shellcheck.net/wiki/SC2062 -- Quote the grep pattern so the she...
+   https://www.shellcheck.net/wiki/SC3037 -- In POSIX sh, echo flags are undef...
+   ```
+   Fixed script:
+   ```sh
+   #!/bin/sh
+   ## Example: a typical script with several problems
+   for f in *.m3u
+   do
+      grep -qi "hq.*mp3" "$f" \
+      && echo "Playlist $f contains a HQ file in mp3 format"
+   done
+   ```
 </details>
