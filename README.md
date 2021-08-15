@@ -465,19 +465,19 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 
 #### Debugging
 1. ```sh
-      $ log show --last 1d | grep sudo | wc
-         565    8327   88040
-      $ log show --last 1d | grep sudo | head
-      2021-08-11 22:24:49.156736+0900 0x3f78f5   Activity    0x3a7820             90998  0    sudo: (libsystem_info.dylib) Performance impact - Resolve user group list (>17 groups)
-      2021-08-11 22:24:49.156746+0900 0x3f78f5   Default     0x0                  90998  0    sudo: (libsystem_info.dylib) Too many groups requested (2147483647).  Can cause performance issues when network directories are involved
-      2021-08-11 22:24:49.158042+0900 0x3f78f5   Activity    0x3a7821             90998  0    sudo: (libsystem_info.dylib) Performance impact - Resolve user group list (>17 groups)
-      2021-08-11 22:24:49.158043+0900 0x3f78f5   Default     0x0                  90998  0    sudo: (libsystem_info.dylib) Too many groups requested (24).  Can cause performance issues when network directories are involved
-      2021-08-11 22:24:49.162401+0900 0x3f78f5   Activity    0x3a7822             90998  0    sudo: (libsystem_info.dylib) Retrieve User by Name
-      2021-08-11 22:24:49.174246+0900 0x3f78f8   Activity    0x3a7830             90999  0    sudo: (libsystem_info.dylib) Performance impact - Resolve user group list (>17 groups)
-      2021-08-11 22:24:49.174256+0900 0x3f78f8   Default     0x0                  90999  0    sudo: (libsystem_info.dylib) Too many groups requested (2147483647).  Can cause performance issues when network directories are involved
-      2021-08-11 22:24:49.174780+0900 0x3f78f8   Activity    0x3a7831             90999  0    sudo: (libsystem_info.dylib) Performance impact - Resolve user group list (>17 groups)
-      2021-08-11 22:24:49.174780+0900 0x3f78f8   Default     0x0                  90999  0    sudo: (libsystem_info.dylib) Too many groups requested (24).  Can cause performance issues when network directories are involved
-      2021-08-11 22:24:49.175425+0900 0x3f78f8   Activity    0x3a7832             90999  0    sudo: (libsystem_info.dylib) Retrieve User by Name
+   $ log show --last 1d | grep sudo | wc
+      565    8327   88040
+   $ log show --last 1d | grep sudo | head
+   2021-08-11 22:24:49.156736+0900 0x3f78f5   Activity    0x3a7820             90998  0    sudo: (libsystem_info.dylib) Performance impact - Resolve user group list (>17 groups)
+   2021-08-11 22:24:49.156746+0900 0x3f78f5   Default     0x0                  90998  0    sudo: (libsystem_info.dylib) Too many groups requested (2147483647).  Can cause performance issues when network directories are involved
+   2021-08-11 22:24:49.158042+0900 0x3f78f5   Activity    0x3a7821             90998  0    sudo: (libsystem_info.dylib) Performance impact - Resolve user group list (>17 groups)
+   2021-08-11 22:24:49.158043+0900 0x3f78f5   Default     0x0                  90998  0    sudo: (libsystem_info.dylib) Too many groups requested (24).  Can cause performance issues when network directories are involved
+   2021-08-11 22:24:49.162401+0900 0x3f78f5   Activity    0x3a7822             90998  0    sudo: (libsystem_info.dylib) Retrieve User by Name
+   2021-08-11 22:24:49.174246+0900 0x3f78f8   Activity    0x3a7830             90999  0    sudo: (libsystem_info.dylib) Performance impact - Resolve user group list (>17 groups)
+   2021-08-11 22:24:49.174256+0900 0x3f78f8   Default     0x0                  90999  0    sudo: (libsystem_info.dylib) Too many groups requested (2147483647).  Can cause performance issues when network directories are involved
+   2021-08-11 22:24:49.174780+0900 0x3f78f8   Activity    0x3a7831             90999  0    sudo: (libsystem_info.dylib) Performance impact - Resolve user group list (>17 groups)
+   2021-08-11 22:24:49.174780+0900 0x3f78f8   Default     0x0                  90999  0    sudo: (libsystem_info.dylib) Too many groups requested (24).  Can cause performance issues when network directories are involved
+   2021-08-11 22:24:49.175425+0900 0x3f78f8   Activity    0x3a7832             90999  0    sudo: (libsystem_info.dylib) Retrieve User by Name
    ```
 2. Done.
 3. We call the given script `hq.sh`.
