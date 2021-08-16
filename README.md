@@ -428,7 +428,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    Writing objects: 100% (212/212), done.
    Total 212 (delta 70), reused 2 (delta 0), pack-reused 0
    ```
-   However, when the dirty files shows up only in the latest commit like in this example, you might rather want to do `git commit --amend` to delete the files before even they become part of the history.
+   However, when the dirty files show up only in the latest commit like in this example, you might rather want to do `git commit --amend` to delete the files before even they become part of the history.
 4. Working in this repository again, we have the following.
    ```sh
    $ echo aaa >> README.md
