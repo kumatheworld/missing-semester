@@ -521,5 +521,5 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
       && echo "Playlist $f contains a HQ file in mp3 format"
    done
    ```
-   4. Skipped.
+4. Skipped.
 </details>
