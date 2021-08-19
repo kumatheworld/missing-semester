@@ -522,4 +522,46 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    done
    ```
 4. Skipped.
+#### Profiling
+1. Changing the code a bit to call one function rather than all the 3 functions, we get the following.
+
+   `quicksort()`:
+   ```sh
+   $ python -m cProfile -s tottime sorts.py | head -15
+            235363 function calls (203240 primitive calls) in 0.101 seconds
+
+      Ordered by: internal time
+
+      ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+    33096/1000    0.032    0.000    0.048    0.000 sorts.py:23(quicksort)
+       25399    0.015    0.000    0.032    0.000 random.py:290(randrange)
+       25399    0.013    0.000    0.018    0.000 random.py:237 (_randbelow_with_getrandbits)
+       25399    0.008    0.000    0.040    0.000 random.py:334(randint)
+       16048    0.007    0.000    0.007    0.000 sorts.py:28(<listcomp>)
+       16048    0.007    0.000    0.007    0.000 sorts.py:27(<listcomp>)
+        1000    0.006    0.000    0.044    0.000 sorts.py:6(<listcomp>)
+       32117    0.003    0.000    0.003    0.000 {method 'getrandbits' of  '_random.Random' objects}
+       33104    0.003    0.000    0.003    0.000 {built-in method  builtins.len}
+       25399    0.002    0.000    0.002    0.000 {method 'bit_length' of  'int' objects}
+   ```
+   `insertionsort()`:
+   ```sh
+   $ python -m cProfile -s tottime sorts.py | head -15
+            140843 function calls (140816 primitive calls) in 0.082 seconds
+
+      Ordered by: internal time
+
+      ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1000    0.031    0.000    0.031    0.000 sorts.py:11 (insertionsort)
+       25736    0.015    0.000    0.032    0.000 random.py:290(randrange)
+       25736    0.012    0.000    0.017    0.000 random.py:237 (_randbelow_with_getrandbits)
+       25736    0.008    0.000    0.039    0.000 random.py:334(randint)
+        1000    0.006    0.000    0.044    0.000 sorts.py:6(<listcomp>)
+       32537    0.003    0.000    0.003    0.000 {method 'getrandbits' of  '_random.Random' objects}
+       25736    0.002    0.000    0.002    0.000 {method 'bit_length' of  'int' objects}
+           1    0.002    0.002    0.079    0.079 sorts.py:4(test_sorted)
+           4    0.001    0.000    0.001    0.000 {built-in method _imp. create_dynamic}
+        1000    0.001    0.000    0.001    0.000 {built-in method  builtins.sorted}
+   ```
+   Those figures show that `quicksort()` and `insertionsort()` took 0.032ms and 0.031ms respectively. The bottlenecks of those algorithms are the list comprehensions.
 </details>
