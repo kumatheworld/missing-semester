@@ -563,5 +563,60 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
            4    0.001    0.000    0.001    0.000 {built-in method _imp. create_dynamic}
         1000    0.001    0.000    0.001    0.000 {built-in method  builtins.sorted}
    ```
-   Those figures show that `quicksort()` and `insertionsort()` took 0.032ms and 0.031ms respectively. The bottlenecks of those algorithms are the list comprehensions.
+   Now we further change the code to use `line_profiler`.
+   ```sh
+   $ tail sorts.py
+      return array
+
+   if __name__ == '__main__':
+      array = random.sample(range(2000), 1000)
+      algorithm = quicksort
+
+      lp = LineProfiler()
+      lp_wrapper = lp(algorithm)
+      lp_wrapper(array)
+      lp.print_stats()
+   ```
+   `quicksort()`:
+   ```sh
+   $ ipython sorts.py
+   Timer unit: 1e-06 s
+
+   Total time: 0.007301 s
+   File: /Users/kumatheworld/tmp/line_profiler/sorts.py
+   Function: quicksort at line 24
+
+   Line #      Hits         Time  Per Hit   % Time  Line Contents
+   ==============================================================
+      24                                           def quicksort(array):
+      25      1331        783.0      0.6     10.7      if len(array) <= 1:
+      26       666        304.0      0.5      4.2          return array
+      27       665        367.0      0.6      5.0      pivot = array[0]
+      28       665       2694.0      4.1     36.9      left = [i for i in array[1:] if i < pivot]
+      29       665       2702.0      4.1     37.0      right = [i for i in array[1:] if i >= pivot]
+      30       665        451.0      0.7      6.2      return quicksort(left) + [pivot] + quicksort(right)
+   ```
+   `insertionsort()`:
+   ```sh
+   $ ipython sorts.py
+   Timer unit: 1e-06 s
+
+   Total time: 0.317805 s
+   File: /Users/kumatheworld/tmp/line_profiler/sorts.py
+   Function: insertionsort at line 12
+
+   Line #      Hits         Time  Per Hit   % Time  Line Contents
+   ==============================================================
+      12                                           def insertionsort(array):
+      13
+      14      1001        388.0      0.4      0.1      for i in range(len(array)):
+      15      1000        435.0      0.4      0.1          j = i-1
+      16      1000        374.0      0.4      0.1          v = array[i]
+      17    236649     112488.0      0.5     35.4          while j >= 0 and v < array[j]:
+      18    235649     112387.0      0.5     35.4              array[j+1] = array[j]
+      19    235649      91303.0      0.4     28.7              j -= 1
+      20      1000        429.0      0.4      0.1          array[j+1] = v
+      21         1          1.0      1.0      0.0      return array
+   ```
+   Those results show that `quicksort()` was much faster than `insertionsort()` when the array was large.
 </details>
