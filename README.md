@@ -619,4 +619,53 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
       21         1          1.0      1.0      0.0      return array
    ```
    Those results show that `quicksort()` was much faster than `insertionsort()` when the array was large.
+
+   For memory profiling, as `quicksort()` is a recusrive function and `memory_profiler` is invoked every time the function is called, we create another function that externally calls `quicksort()`.
+   ```sh
+   $ tail sorts.py
+
+   @profile
+   def quicksort_(array):
+      return quicksort(array)
+
+   if __name__ == '__main__':
+      array = random.sample(range(2000), 1000)
+      algorithm = quicksort_
+
+      algorithm(array)
+   ```
+   The profiling results are as follows.
+   `quicksort()`:
+   ```sh
+   $ python -m memory_profiler sorts.py
+   Filename: sorts.py
+
+   Line #    Mem usage    Increment  Occurences   Line Contents
+   ============================================================
+      32     38.7 MiB     38.7 MiB           1   @profile
+      33                                         def quicksort_(array):
+      34     38.7 MiB      0.0 MiB           1       return quicksort(array)
+   ```
+   `insertionsort()`:
+   ```sh
+   $ python -m memory_profiler sorts.py
+   Filename: sorts.py
+
+   Line #    Mem usage    Increment  Occurences   Line Contents
+   ============================================================
+      12     38.8 MiB     38.8 MiB           1   @profile
+      13                                         def insertionsort(array):
+      14
+      15     38.8 MiB      0.0 MiB        1001       for i in range(len(array)):
+      16     38.8 MiB      0.0 MiB        1000           j = i-1
+      17     38.8 MiB      0.0 MiB        1000           v = array[i]
+      18     38.8 MiB      0.0 MiB      255584           while j >= 0 and v < array[j]:
+      19     38.8 MiB      0.0 MiB      254584               array[j+1] = array[j]
+      20     38.8 MiB      0.0 MiB      254584               j -= 1
+      21     38.8 MiB      0.0 MiB        1000           array[j+1] = v
+      22     38.8 MiB      0.0 MiB           1       return array
+
+
+   ```
+   Those results show no significant difference in memory consumption. Actually, the memory usage remains 38.7 or 38.8 MB even if we double or halve the size of the array, which means that the Mem usage number is dominated by some overhead that the array has nothing to do with. If we make the array so large (like 10^7) that the memory usage exceeds 38.8 MB, `insertionsort()` will take too long. Theoretically, however, `quicksort()` will use more space as it creates other arrays while all `insertionsort()` does is swapping some elements in the given array.
 </details>
