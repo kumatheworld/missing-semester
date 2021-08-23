@@ -668,4 +668,19 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 
    ```
    Those results show no significant difference in memory consumption. Actually, the memory usage remains 38.7 or 38.8 MB even if we double or halve the size of the array, which means that the Mem usage number is dominated by some overhead that the array has nothing to do with. If we make the array so large (like 10^7) that the memory usage exceeds 38.8 MB, `insertionsort()` will take too long. Theoretically, however, `quicksort()` will use more space as it creates other arrays while all `insertionsort()` does is swapping some elements in the given array.
+
+   The `perf` challenge is skipped as I do not have an environment for that.
+2. Before uncommenting the commented lines:
+   ```sh
+   $ pycallgraph graphviz -- ./fib.py
+   34
+   ```
+   Looking at the [generated graph](pycallgraph.png), we see that `fib0()` was called 21 times.
+
+   After uncommenting them:
+   ```sh
+   $ pycallgraph graphviz -- ./fib.py
+   34
+   ```
+   Looking at the [newly generated graph](pycallgraph_uncommented.png), we see that each `fibN()` was called just once.
 </details>
