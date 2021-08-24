@@ -683,4 +683,20 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    34
    ```
    Looking at the [newly generated graph](pycallgraph_uncommented.png), we see that each `fibN()` was called just once.
+3. ```sh
+   $ python -m http.server 4444
+   Serving HTTP on :: port 4444 (http://[::]:4444/) ...
+   ```
+   ```sh
+   $ lsof | grep LISTEN
+   rapportd    443 kumatheworld    5u     IPv4 0xca46f179b94679c3        0t0                 TCP *:59470 (LISTEN)
+   rapportd    443 kumatheworld    6u     IPv6 0xca46f179c8b0cefb        0t0                 TCP *:59470 (LISTEN)
+   LINE       1313 kumatheworld    9u     IPv4 0xca46f179c8990e13        0t0                 TCP localhost:10400 (LISTEN)
+   Dropbox    2267 kumatheworld   81u     IPv6 0xca46f179c8b0c23b        0t0                 TCP *:17500 (LISTEN)
+   Dropbox    2267 kumatheworld   82u     IPv4 0xca46f179c89940db        0t0                 TCP *:17500 (LISTEN)
+   Dropbox    2267 kumatheworld  116u     IPv4 0xca46f179b9466f9b        0t0                 TCP localhost:17600 (LISTEN)
+   Dropbox    2267 kumatheworld  121u     IPv4 0xca46f179c8c3983b        0t0                 TCP localhost:17603 (LISTEN)
+   Python    20565 kumatheworld    4u     IPv6 0xca46f179ccd0023b        0t0                 TCP *:krb524 (LISTEN)
+   $ kill 20565
+   ```
 </details>
