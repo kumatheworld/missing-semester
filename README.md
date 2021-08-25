@@ -699,4 +699,9 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    Python    20565 kumatheworld    4u     IPv6 0xca46f179ccd0023b        0t0                 TCP *:krb524 (LISTEN)
    $ kill 20565
    ```
+4. ```sh
+   $ stress -c 3
+   stress: info: [29529] dispatching hogs: 3 cpu, 0 io, 0 vm, 0 hdd
+   ```
+   While this command was being executed, `htop` showed that The occupancy of 3 CPUs were constantly over 80%. The rest of the exercise are skipped due to an environmental problem.
 </details>
