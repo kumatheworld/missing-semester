@@ -704,4 +704,29 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    stress: info: [29529] dispatching hogs: 3 cpu, 0 io, 0 vm, 0 hdd
    ```
    While this command was being executed, `htop` showed that The occupancy of 3 CPUs were constantly over 80%. The rest of the exercise are skipped due to an environmental problem.
+5. ```sh
+   $ sudo tshark -Y http
+   Capturing on 'Wi-Fi: en0'
+   ```
+   While doing this, I executed `curl ipinfo.io` on a separate terminal.
+   ```sh
+   $ curl ipinfo.io
+   {
+   "ip": "118.240.150.114",
+   "hostname": "fp76f09672.tkyc411.ap.nuro.jp",
+   "city": "Tokyo",
+   "region": "Tokyo",
+   "country": "JP",
+   "loc": "35.6895,139.6917",
+   "org": "AS2527 Sony Network Communications Inc.",
+   "postal": "151-0052",
+   "timezone": "Asia/Tokyo",
+   "readme": "https://ipinfo.io/missingauth"
+   }
+   ```
+   As the request was sent, I got the following from the terminal that `tshark` was being executed on.
+   ```sh
+   93   5.301986  192.168.1.8 → 34.117.59.81 HTTP 139 GET / HTTP/1.1
+   97   5.437739 34.117.59.81 → 192.168.1.8  HTTP/JSON 748 HTTP/1.1 200 OK , JavaScript Object Notation (application/json)
+   ```
 </details>
