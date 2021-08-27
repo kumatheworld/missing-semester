@@ -734,4 +734,11 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 <details>
 <summary>Metaprogramming</summary>
 
+1. I added the following lines in `Makefile`.
+   ```Makefile
+
+   .PHONY: clean
+   clean:
+         rm *aux *pdf *png *log
+   ```
 </details>
