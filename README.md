@@ -730,3 +730,8 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    97   5.437739 34.117.59.81 → 192.168.1.8  HTTP/JSON 748 HTTP/1.1 200 OK , JavaScript Object Notation (application/json)
    ```
 </details>
+
+<details>
+<summary>Metaprogramming</summary>
+
+</details>
