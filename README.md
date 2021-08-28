@@ -741,4 +741,5 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    clean:
          rm *aux *pdf *png *log
    ```
+2. I do use comparison requirements a lot in `requirements.txt` of my personal Python projects as it is very straightforward. Wildcard and multiple requirements are also straightforward and will be useful as well. However, I do not really come up with cases where caret and tilde requirements make a lot of sense.
 </details>
