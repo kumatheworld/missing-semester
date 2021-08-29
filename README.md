@@ -746,4 +746,65 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    git clean -xf
    ```
 2. I do use comparison requirements a lot in `requirements.txt` of my personal Python projects as it is very straightforward. Wildcard and multiple requirements are also straightforward and will be useful as well. However, I do not really come up with cases where caret and tilde requirements make a lot of sense.
+3. I added a file named `pre-commit` in `.git/hooks/`, in which the following line is written.
+   ```sh
+   make paper.pdf
+   ```
+   When I made a non-compilable change add tried commit it, the commit was not successful as expected.
+   ```sh
+   $ git log --oneline
+   e07a25b (HEAD -> master) Initial commit
+   $ git status --short
+   $ echo a >> plot.py
+   $ git commit -am "Add garbage"
+   ./plot.py -i data.dat -o plot-data.png
+      File "./plot.py", line 14
+         plt.savefig(args.o)a
+                            ^
+   SyntaxError: invalid syntax
+   make: *** [plot-data.png] Error 1
+   $ git log --oneline
+   e07a25b (HEAD -> master) Initial commit
+   ```
+   On the other hand, when I made a compilable change and tried to commit it, the commit was successful.
+   ```sh
+   $ echo "6 6" >> data.dat
+   $ git commit -am "Add data"
+   ./plot.py -i data.dat -o plot-data.png
+   pdflatex paper.tex
+   This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex)
+   restricted \write18 enabled.
+   entering extended mode
+   (./paper.tex
+   LaTeX2e <2020-10-01> patch level 4
+   L3 programming layer <2021-02-18>
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
+   Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/base/size10.clo))
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphicx.sty
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/keyval.sty)
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/graphics.sty
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics/trig.sty)
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/graphics-def/pdftex.def)))
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+   No file paper.aux.
+   (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+   [Loading MPS to PDF converter (version 2006.09.02).]
+   ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+   (/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+   Overfull \hbox (45.79955pt too wide) in paragraph at lines 4--5
+   [][]
+   [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./plo
+   t-data.png>] (./paper.aux) )
+   (see the transcript file for additional information)</usr/local/texlive/2021/te
+   xmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
+   Output written on paper.pdf (1 page, 24064 bytes).
+   Transcript written on paper.log.
+   [master f33fcf5] Add data
+   1 file changed, 1 insertion(+), 1 deletion(-)
+   $ git log --oneline
+   f33fcf5 (HEAD -> master) Add data
+   e07a25b Initial commit
+   ```
 </details>
