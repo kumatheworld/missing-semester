@@ -807,4 +807,5 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    f33fcf5 (HEAD -> master) Add data
    e07a25b Initial commit
    ```
+4. I have my own GitHub page [here](https://kumatheworld.github.io/) but would not like to add a GitHub Action to run `shellcheck` as the website is nothing to do with shellscripts so far. However, on another [respository](https://github.com/kumatheworld/textbook-solutions), I have set a GitHub Action that generates PDF files from LaTeX sources and is triggered by pushing a tagged commit.
 </details>
