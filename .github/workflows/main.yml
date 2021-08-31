@@ -1,0 +1,14 @@
+name: Proselint
+
+on:
+  - push
+
+jobs:
+  proselint:
+    name: Proselint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Build docker image
+        uses: kumatheworld/missing-semester/.github/actions/proselint@main
