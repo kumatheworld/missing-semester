@@ -818,4 +818,5 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 
    1. 4 * log(100000) = 66.44 bits.
    2. 8 * log(2*26+10) = 47.63 bits.
+   3. The first one is stronger in terms of entropy since having more bits means being harder to guess.
 </details>
