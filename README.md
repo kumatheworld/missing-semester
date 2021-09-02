@@ -814,4 +814,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 <details>
 <summary>Security and Cryptography</summary>
 
+1. Entropy.
+
+   1. 4 * log(100000) = 66.44 bits.
 </details>
