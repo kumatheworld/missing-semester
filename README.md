@@ -819,4 +819,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    1. 4 * log(100000) = 66.44 bits.
    2. 8 * log(2*26+10) = 47.63 bits.
    3. The first one is stronger in terms of entropy since having more bits means being harder to guess.
+   4. First of all, let us review the following fact: if we play a game where we win at probability p, then the expected number of attempts until we win for the first time is 1/p. We use this to derive the estimated times below. <br>
+   Now, assuming that we know ahead of time that the password consists of 4 words, the first case will take (100000^4 / 10000) secs = 10^16 secs = 317 million years. <br>
+   For the second case, assuming that we know ahead of time that the password consists of 8 characters, it will take (62^8 / 10000) secs = 2.18 * 10^10 secs = 692 years.
 </details>
