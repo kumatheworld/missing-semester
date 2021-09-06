@@ -822,4 +822,27 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    4. First of all, let us review the following fact: if we play a game where we win at probability p, then the expected number of attempts until we win for the first time is 1/p. We use this to derive the estimated times below. <br>
    Now, assuming that we know ahead of time that the password consists of 4 words, the first case will take (100000^4 / 10000) secs = 10^16 secs = 317 million years. <br>
    For the second case, assuming that we know ahead of time that the password consists of 8 characters, it will take (62^8 / 10000) secs = 2.18 * 10^10 secs = 692 years.
+2. Cryptographic hash functions.
+   ```sh
+   $ wget --no-check-certificate https://debian.xfree.com.ar/debian-cd/current/amd64/iso-cd/debian-11.0.0-amd64-netinst.iso
+   --2021-09-06 19:39:10--  https://debian.xfree.com.ar/debian-cd/current/amd64/iso-cd/debian-11.0.0-amd64-netinst.iso
+   Resolving debian.xfree.com.ar (debian.xfree.com.ar)... 190.111.255.148
+   Connecting to debian.xfree.com.ar (debian.xfree.com.ar)|190.111.255.148|:443... connected.
+   WARNING: no certificate subject alternative name matches
+         requested host name ‘debian.xfree.com.ar’.
+   HTTP request sent, awaiting response... 200 OK
+   Length: 395313152 (377M) [application/x-iso9660-image]
+   Saving to: ‘debian-11.0.0-amd64-netinst.iso’
+
+   debian-11.0.0-amd64-netinst.iso   100%[=============================================================>] 377.00M  5.54MB/s    in 13m 40s
+
+   2021-09-06 19:52:52 (471 KB/s) - ‘debian-11.0.0-amd64-netinst.iso’ saved [395313152/395313152]
+
+   $ sha256sum debian-11.0.0-amd64-netinst.iso
+   ae6d563d2444665316901fe7091059ac34b8f67ba30f9159f7cef7d2fdc5bf8a  debian-11.0.0-amd64-netinst.iso
+   $ curl https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA256SUMS
+   ae6d563d2444665316901fe7091059ac34b8f67ba30f9159f7cef7d2fdc5bf8a  debian-11.0.0-amd64-netinst.iso
+   de5ce53ec0b2a84b2f3f1f1128138e9e6228a1e4315312b8ac3024099e835de4  debian-edu-11.0.0-amd64-netinst.iso
+   c117f904cf51278923814f5b92c171e56726eb43c8895eb9258dc5b3b1c71400  debian-mac-11.0.0-amd64-netinst.iso
+   ```
 </details>
