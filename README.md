@@ -845,4 +845,21 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    de5ce53ec0b2a84b2f3f1f1128138e9e6228a1e4315312b8ac3024099e835de4  debian-edu-11.0.0-amd64-netinst.iso
    c117f904cf51278923814f5b92c171e56726eb43c8895eb9258dc5b3b1c71400  debian-mac-11.0.0-amd64-netinst.iso
    ```
+3. Symmetric cryptography.
+   ```sh
+   $ echo foo > bar
+   $ openssl aes-256-cbc -salt -in bar -out baz
+   enter aes-256-cbc encryption password:
+   Verifying - enter aes-256-cbc encryption password:
+   $ cat baz; echo
+   Salted__�B
+   l	w��ͱ�X�b�@������3
+   $ hexdump baz
+   0000000 53 61 6c 74 65 64 5f 5f ca 42 0a 6c 09 77 c0 ff
+   0000010 cd b1 b4 58 cd 62 e1 40 97 a1 f6 b0 82 a1 12 33
+   0000020
+   $ openssl aes-256-cbc -d -in baz -out qux
+   enter aes-256-cbc decryption password:
+   $ cmp bar qux
+   ```
 </details>
