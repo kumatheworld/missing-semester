@@ -862,4 +862,7 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
    enter aes-256-cbc decryption password:
    $ cmp bar qux
    ```
+4. Asymmetric cryptography.
+
+   1. Already done in the past. Run `ssh-keygen`.
 </details>
