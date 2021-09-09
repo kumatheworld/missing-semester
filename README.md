@@ -865,4 +865,39 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
 4. Asymmetric cryptography.
 
    1. Already done in the past. Run `ssh-keygen`.
+   2. ``` sh
+      $ gpg --gen-key
+      gpg (GnuPG) 2.3.2; Copyright (C) 2021 Free Software Foundation, Inc.
+      This is free software: you are free to change and redistribute it.
+      There is NO WARRANTY, to the extent permitted by law.
+
+      Note: Use "gpg --full-generate-key" for a full featured key generation dialog.
+
+      GnuPG needs to construct a user ID to identify your key.
+
+      Real name: Yoshihiro Kumazawa
+      Email address: kumatheworld1105@yahoo.co.jp
+      You selected this USER-ID:
+         "Yoshihiro Kumazawa <kumatheworld1105@yahoo.co.jp>"
+
+      Change (N)ame, (E)mail, or (O)kay/(Q)uit? O
+      We need to generate a lot of random bytes. It is a good idea to perform
+      some other action (type on the keyboard, move the mouse, utilize the
+      disks) during the prime generation; this gives the random number
+      generator a better chance to gain enough entropy.
+      We need to generate a lot of random bytes. It is a good idea to perform
+      some other action (type on the keyboard, move the mouse, utilize the
+      disks) during the prime generation; this gives the random number
+      generator a better chance to gain enough entropy.
+      gpg: /Users/kumatheworld/.gnupg/trustdb.gpg: trustdb created
+      gpg: key 2B27336C85F0AE58 marked as ultimately trusted
+      gpg: directory '/Users/kumatheworld/.gnupg/openpgp-revocs.d' created
+      gpg: revocation certificate stored as '/Users/kumatheworld/.gnupg/openpgp-revocs.d/A278A1BB9BB60E72601B81882B27336C85F0AE58.rev'
+      public and secret key created and signed.
+
+      pub   ed25519 2021-09-09 [SC] [expires: 2023-09-09]
+            A278A1BB9BB60E72601B81882B27336C85F0AE58
+      uid                      Yoshihiro Kumazawa <kumatheworld1105@yahoo.co.jp>
+      sub   cv25519 2021-09-09 [E] [expires: 2023-09-09]
+      ```
 </details>
