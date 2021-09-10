@@ -900,4 +900,29 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
       uid                      Yoshihiro Kumazawa <kumatheworld1105@yahoo.co.jp>
       sub   cv25519 2021-09-09 [E] [expires: 2023-09-09]
       ```
+   3. I think sending him an e-mail is too much since I wasn't taking the course. Instead, I encrypt and decrypt this very README.md here.
+      ```sh
+      $ gpg --encrypt --sign --armor -r kumatheworld1105@yahoo.co.jp README.md
+      $ head README.md.asc
+      -----BEGIN PGP MESSAGE-----
+
+      hF4DcEX6Bcv8chkSAQdAPfRQRX4/zQMHJ0AZ3eIqyA3K4QAIEeWP+zgK0eCvEHow
+      5Elg6MNYagWCqI3cVoxAYPWL0SV/BDoYej7EgG302EbfeLSbYm7v3McDjErVyF7+
+      1O0BCQIVutTnDiK4q1L0xZlxQEtv2G4/5astop55amxkkQMJ9572efzqT6WXzhYJ
+      QtpaSk3W9KVVROeSPbPpqTPeuCbPyNVLN99ETH7lPjyMZhrtPHAUewow++YU3c6m
+      EW9xE2KLYCCpDXjhO2FBW5QVkRfivos9akOpYPga08E+MZXySMqF9qO8oNphySpf
+      dyIUeq2KLdEVy6YOLp8qT/gKw4JrMevyhSVxpw+Nya3z+H23sDVi9Xh2+3FSuEvZ
+      AwhXRr+QHc1L3mUgb/lxOdhXLdhnNkclEk59O8okTB62eiGuz43Uot101a7h8oXC
+      cwvcwT0uFtOC7b79mMpLaFcsdOG8Yl6z6h33vav1LUtZ1JaSMk7HQhvaODQgKUNq
+      $ gpg README.md.asc
+      gpg: WARNING: no command supplied.  Trying to guess what you mean ...
+      gpg: encrypted with cv25519 key, ID 7045FA05CBFC7219, created 2021-09-09
+            "Yoshihiro Kumazawa <kumatheworld1105@yahoo.co.jp>"
+      File 'README.md' exists. Overwrite? (y/N) N
+      Enter new filename: README.md.dec
+      gpg: Signature made Fri Sep 10 19:39:26 2021 JST
+      gpg:                using EDDSA key A278A1BB9BB60E72601B81882B27336C85F0AE58
+      gpg: Good signature from "Yoshihiro Kumazawa <kumatheworld1105@yahoo.co.jp>" [ultimate]
+      $ cmp README.md{,.dec}
+      ```
 </details>
