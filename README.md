@@ -925,4 +925,27 @@ My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 202
       gpg: Good signature from "Yoshihiro Kumazawa <kumatheworld1105@yahoo.co.jp>" [ultimate]
       $ cmp README.md{,.dec}
       ```
+   4. ```sh
+      $ export GPG_TTY=$(tty)
+      $ gpg --list-secret-keys --keyid-format LONG
+      /Users/kumatheworld/.gnupg/pubring.kbx
+      --------------------------------------
+      sec   ed25519/2B27336C85F0AE58 2021-09-09 [SC] [expires: 2023-09-09]
+            A278A1BB9BB60E72601B81882B27336C85F0AE58
+      uid                 [ultimate] Yoshihiro Kumazawa <kumatheworld1105@yahoo.co.jp>
+      ssb   cv25519/7045FA05CBFC7219 2021-09-09 [E] [expires: 2023-09-09]
+
+      $ git config --global user.signingkey 2B27336C85F0AE58
+      $ git tag v0.0 -sm "Dummy tag for the next exercise"
+      $ git tag -v v0.0
+      object 5b2757c1d14faac04d5332c3841216f731742bb8
+      type commit
+      tag v0.0
+      tagger kumatheworld <kumatheworld1105@yahoo.co.jp> 1631341816 +0900
+
+      Dummy tag for the next exercise
+      gpg: Signature made Sat Sep 11 15:30:16 2021 JST
+      gpg:                using EDDSA key A278A1BB9BB60E72601B81882B27336C85F0AE58
+      gpg: Good signature from "Yoshihiro Kumazawa <kumatheworld1105@yahoo.co.jp>" [ultimate]
+      ```
 </details>
