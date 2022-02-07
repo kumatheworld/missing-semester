@@ -1,5 +1,5 @@
 # missing-semester
-My Exercise Solutions for [The Missing Semester of Your CS Education, Winter 2020](https://missing.csail.mit.edu/2020/) from MIT.
+My exercise solutions to [The Missing Semester of Your CS Education, Winter 2020](https://missing.csail.mit.edu/2020/) from MIT.
 
 <details>
 <summary>Course overview + the shell</summary>
